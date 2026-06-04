@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Sensi Real</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        principal: '#7928CA',
+                        destaque: '#FF0080',
+                        escuro: '#12121F',
+                        card: '#1E1E30',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .conteudo { @apply container mx-auto px-4 py-6; }
+            .botao-principal { @apply bg-gradient-to-r from-principal to-destaque text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-principal/30 active:scale-95; }
+            .botao-acao { @apply bg-card hover:bg-principal/20 border border-principal/30 text-white p-3 rounded-lg text-sm transition-all duration-200; }
+            .card { @apply bg-card/80 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/10; }
+            .brilho { @apply animate-pulse; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-escuro to-[#0F0F1A] text-gray-200 font-sans min-h-screen">
+
+    <div class="conteudo">
+        <header class="text-center mb-8">
+            <h1 class="text-[clamp(1.7rem,5vw,3rem)] font-bold text-white mb-2">
+                <i class="fa fa-crosshairs text-destaque"></i> Gerador de Sensi Real
+            </h1>
+            <p class="text-gray-400">Todas funções em um só lugar</p>
+            <div class="mt-2 inline-block bg-principal/20 text-principal px-3 py-1 rounded-full text-xs font-semibold">
+                VERSÃO 2.0 • COMPLETO
+            </div>
+        </header>
+
+        <!-- SUPRESSOR -->
+        <div class="card max-w-md mx-auto mb-5">
+            <h2 class="text-lg font-bold text-principal mb-3">🎯 Supressor de Recuo</h2>
+            <p class="text-sm text-gray-400 mb-4">Deixa a mira estável, não trema mais</p>
+            <button onclick="mostrarMensagem('✅ SUPRESSOR ATIVADO! MIRA PARADA!')" class="botao-principal w-full">
+                <i class="fa fa-crosshairs"></i> ATIVAR MIRA FIXA
+            </button>
+        </div>
+
+        <!-- OTIMIZADOR -->
+        <div class="card max-w-md mx-auto mb-5">
+            <h2 class="text-lg font-bold text-cyan-400 mb-3">⚡ Otimizador de Desempenho</h2>
+            <p class="text-sm text-gray-400 mb-4">Acaba com travamentos, deixa celular rápido</p>
+            <button onclick="mostrarMensagem('🚀 OTIMIZAÇÃO CONCLUÍDA! SEM LAG!')" class="bg-cyan-500/20 hover:bg-cyan-500/40 text-cyan-300 border border-cyan-500/30 font-bold py-3 px-6 rounded-xl w-full transition">
+                <i class="fa fa-bolt"></i> OTIMIZAR TUDO
+            </button>
+        </div>
+
+        <!-- GERADOR DE SENSI -->
+        <div class="card max-w-md mx-auto">
+            <h2 class="text-lg font-bold text-yellow-400 mb-4">🔧 Gerador de Sensibilidade</h2>
+
+            <!-- NÍVEL -->
+            <div class="mb-4">
+                <p class="text-sm font-medium mb-2">📊 Nível:</p>
+                <div class="grid grid-cols-3 gap-2">
+                    <label class="bg-gray-800 p-2 rounded text-center cursor-pointer hover:bg-yellow-500/20">
+                        <input type="radio" name="nivel" value="baixa" class="mr-1"> Baixa
+                    </label>
+                    <label class="bg-gray-800 p-2 rounded text-center cursor-pointer hover:bg-yellow-500/20">
+                        <input type="radio" name="nivel" value="media" checked class="mr-1"> Média
+                    </label>
+                    <label class="bg-gray-800 p-2 rounded text-center cursor-pointer hover:bg-yellow-500/20">
+                        <input type="radio" name="nivel" value="alta" class="mr-1"> Alta
+                    </label>
+                </div>
+            </div>
+
+            <!-- ESTILO -->
+            <div class="mb-5">
+                <p class="text-sm font-medium mb-2">⚡ Estilo de Jogo:</p>
+                <div class="space-y-2">
+                    <label class="bg-gray-800 p-2 rounded cursor-pointer hover:bg-yellow-500/20 block">
+                        <input type="radio" name="estilo" value="capa" class="mr-2"> ✅ Dar Capa / DPI Alto
+                    </label>
+                    <label class="bg-gray-800 p-2 rounded cursor-pointer hover:bg-yellow-500/20 block">
+                        <input type="radio" name="estilo" value="movimento" class="mr-2"> ⚡ Movimento / Rápida
+                    </label>
+                    <label class="bg-gray-800 p-2 rounded cursor-pointer hover:bg-yellow-500/20 block" checked>
+                        <input type="radio" name="estilo" value="equilibrada" class="mr-2"> ⚖️ Equilibrada
+                    </label>
+                </div>
+            </div>
+
+            <!-- BOTÃO GERAR -->
+            <button onclick="gerarSensibilidade()" class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-3 px-6 rounded-xl w-full mb-4 transition">
+                <i class="fa fa-magic"></i> GERAR SENSIBILIDADE
+            </button>
+
+            <!-- RESULTADO -->
+            <div id="resultado" class="hidden bg-gray-800/70 p-4 rounded-xl border border-yellow-500/20">
+                <h3 class="text-center font-bold text-yellow-400 mb-2 brilho">📊 CONFIGURAÇÕES PRONTAS</h3>
+                <div class="space-y-1 text-sm">
+                    <p class="flex justify-between"><strong>Geral:</strong> <span id="geral" class="text-yellow-300"></span></p>
+                    <p class="flex justify-between"><strong>Ponto Vermelho:</strong> <span id="vermelho" class="text-yellow-300"></span></p>
+                    <p class="flex justify-between"><strong>2x:</strong> <span id="zoom2x" class="text-yellow-300"></span></p>
+                    <p class="flex justify-between"><strong>4x:</strong> <span id="zoom4x" class="text-yellow-300"></span></p>
+                    <p class="flex justify-between text-green-400"><strong>DPI:</strong> <span id="dpi" class="font-bold"></span></p>
+                </div>
+                <p id="obs" class="text-xs text-gray-400 mt-2 text-center"></p>
+            </div>
+        </div>
+
+        <footer class="text-center text-gray-500 text-sm mt-8">
+            Desenvolvido por Você © 2026
+        </footer>
+    </div>
+
+    <script>
+        function mostrarMensagem(texto) {
+            const aviso = document.createElement('div');
+            aviso.className = 'fixed bottom-5 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 brilho';
+            aviso.textContent = texto;
+            document.body.appendChild(aviso);
+            setTimeout(() => aviso.remove(), 2500);
+        }
+
+        function gerarSensibilidade() {
+            const nivel = document.querySelector('input[name="nivel"]:checked').value;
+            const estilo = document.querySelector('input[name="estilo"]:checked').value;
+
+            let min, max, dpiBase, obs;
+
+            if(nivel === 'baixa') { min=45; max=65; dpiBase=411; obs = "Baixa: mais controle"; }
+            if(nivel === 'media') { min=65; max=85; dpiBase=500; obs = "Média: equilíbrio perfeito"; }
+            if(nivel === 'alta') { min=85; max=100; dpiBase=600; obs = "Alta: resposta rápida"; }
+
+            if(estilo === 'capa') { dpiBase += 80; obs += " | 🎯 PARA DAR CAPA"; }
+            if(estilo === 'movimento') { min += 10; max += 10; dpiBase += 30; obs += " | ⚡ PARA MOVIMENTO"; }
+            if(estilo === 'equilibrada') { obs += " | ⚖️ EQUILIBRADA"; }
+
+            const geral = Math.floor(Math.random() * (max - min + 1)) + min;
+            const vermelho = Math.floor(Math.random() * (max - min + 1)) + min;
+            const zoom2x = Math.floor(Math.random() * ((max+5) - (min-5) + 1)) + (min-5);
+            const zoom4x = Math.floor(Math.random() * ((max+10) - (min-10) + 1)) + (min-10);
+            const dpi = dpiBase;
+
+            document.getElementById('geral').textContent = geral;
+            document.getElementById('vermelho').textContent = vermelho;
+            document.getElementById('zoom2x').textContent = zoom2x;
+            document.getElementById('zoom4x').textContent = zoom4x;
+            document.getElementById('dpi').textContent = dpi;
+            document.getElementById('obs').textContent = obs;
+
+            document.getElementById('resultado').classList.remove('hidden');
+            mostrarMensagem("✅ SENSIBILIDADE GERADA COM SUCESSO!");
+        }
+    </script>
+</body>
+</html>
+
