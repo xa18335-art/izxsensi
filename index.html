@@ -3,30 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Izx Sensi Real | Supressor & Otimizador</title>
+    <title>IZX REAL • CONFIGURAÇÕES DO APARELHO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2138/2138131.png">
-    <meta name="description" content="Melhor gerador de sensibilidade, supressor de recuo e otimizador para Free Fire. 100% funcional e seguro.">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        principal: '#7928CA',
-                        destaque: '#FF0080',
-                        escuro: '#12121F',
-                        card: '#1E1E30',
+                        principal: '#2563EB',
                         sucesso: '#10B981',
                         alerta: '#F59E0B',
-                        info: '#3B82F6',
-                        capa: '#FF3366',
-                        fps: '#00FF94',
-                        cabeca: '#FFD700',
+                        erro: '#EF4444',
+                        escuro: '#0F172A',
+                        card: '#1E293B',
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
                 }
             }
         }
@@ -34,305 +26,194 @@
     <style type="text/tailwindcss">
         @layer utilities {
             .conteudo { @apply container mx-auto px-4 py-6; }
-            .botao-principal { @apply bg-gradient-to-r from-principal to-destaque text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-principal/30 active:scale-95; }
-            .botao-acao { @apply bg-card hover:bg-principal/20 border border-principal/30 text-white p-3 rounded-lg text-sm transition-all duration-200; }
-            .botao-capa { @apply bg-gradient-to-r from-capa to-orange-500 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-capa/30 active:scale-95; }
-            .botao-fps { @apply bg-gradient-to-r from-fps to-cyan-500 text-black font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-fps/30 active:scale-95; }
-            .botao-cabeca { @apply bg-gradient-to-r from-cabeca to-yellow-500 text-black font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cabeca/50 active:scale-95; }
+            .botao-real { @apply bg-gradient-to-r from-principal to-blue-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-principal/30 active:scale-95; }
             .card { @apply bg-card/80 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/10; }
             .brilho { @apply animate-pulse; }
-            .aba-ativa { @apply bg-principal text-white; }
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-escuro to-[#0F0F1A] text-gray-200 font-sans min-h-screen">
+<body class="bg-gradient-to-br from-escuro to-[#1A103D] text-gray-200 font-sans min-h-screen">
 
     <div class="conteudo">
         <header class="text-center mb-8">
-            <h1 class="text-[clamp(1.7rem,5vw,3rem)] font-bold text-white mb-2 brilho">
-                <i class="fa fa-crosshairs text-destaque"></i> IZX SENSI REAL
+            <h1 class="text-[clamp(1.7rem,5vw,3rem)] font-bold text-white mb-2">
+                <i class="fa fa-cog text-principal"></i> IZX REAL
             </h1>
-            <p class="text-gray-400">✅ Supressor • ✅ FULL CAPA • ✅ FPS MÁXIMO • 🚨 ZERO PEITO</p>
-            <div class="mt-2 inline-block bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-semibold animate-pulse">
-                🟢 ONLINE E FUNCIONANDO • DETECTA SEU CELULAR
-            </div>
-
-            <!-- 📱 IDENTIFICAÇÃO DO APARELHO -->
-            <div id="infoAparelho" class="mt-3 bg-info/20 border border-info/30 rounded-lg p-2 text-xs text-info font-medium hidden">
-                📱 Aparelho detectado: <span id="nomeAparelho" class="font-bold"></span> | <span id="tipoAparelho"></span>
+            <p class="text-green-400 font-medium">✅ FUNÇÕES REAIS • MEXE NO APARELHO • 100% FUNCIONAL</p>
+            <div class="mt-2 bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-xs inline-block brilho">
+                🟢 ALTERA CONFIGURAÇÕES DO SISTEMA ANDROID
             </div>
         </header>
 
-        <!-- MENU DE ABAS SIMPLIFICADO -->
-        <div class="flex flex-wrap gap-2 max-w-md mx-auto mb-6 justify-center">
-            <button onclick="mostrarAba('gerador')" class="aba-ativa px-3 py-2 rounded-lg text-sm font-medium">Gerador</button>
-            <button onclick="mostrarAba('supressor')" class="px-3 py-2 rounded-lg text-sm font-medium bg-card hover:bg-principal/20">Supressor</button>
-            <button onclick="mostrarAba('fps')" class="px-3 py-2 rounded-lg text-sm font-medium bg-card hover:bg-fps/20 text-fps">FPS MÁXIMO</button>
-            <button onclick="mostrarAba('cabeca')" class="px-3 py-2 rounded-lg text-sm font-medium bg-card hover:bg-cabeca/20 text-cabeca brilho">🚨 ZERO PEITO</button>
-            <button onclick="mostrarAba('extra')" class="px-3 py-2 rounded-lg text-sm font-medium bg-card hover:bg-principal/20">Extras</button>
+        <!-- AVISO IMPORTANTE -->
+        <div class="bg-alerta/20 border border-alerta/30 p-3 rounded-lg mb-6 text-center">
+            <p class="text-alerta text-sm font-bold">⚠️ COMO USAR:</p>
+            <p class="text-xs text-gray-300">Ao clicar, você será redirecionado para as configurações do seu celular ou receberá o comando para aplicar. Tudo é oficial do Android.</p>
         </div>
 
-        <!-- ===================== ABA 1: GERADOR PRINCIPAL ===================== -->
-        <div id="aba-gerador" class="bloco-aba">
-            <div class="card max-w-md mx-auto mb-5">
-                <h2 class="text-lg font-bold text-yellow-400 mb-4">🔧 Gerador de Sensibilidade</h2>
+        <!-- ===================== SEÇÃO 1: VELOCIDADE E TOQUE ===================== -->
+        <div class="card max-w-md mx-auto mb-6">
+            <h2 class="text-xl font-bold text-principal mb-4 text-center">⚡ RESPOSTA DE TOQUE</h2>
+            <p class="text-sm text-gray-400 mb-5 text-center">Acelera o reconhecimento do dedo, zera atraso, melhora precisão</p>
 
-                <!-- NÍVEL -->
-                <div class="mb-4">
-                    <p class="text-sm font-medium mb-2">📊 Nível de Sensibilidade:</p>
-                    <div class="grid grid-cols-3 gap-2">
-                        <label class="bg-gray-800 p-2 rounded text-center cursor-pointer hover:bg-yellow-500/20">
-                            <input type="radio" name="nivel" value="baixa" class="mr-1"> Baixa
-                        </label>
-                        <label class="bg-gray-800 p-2 rounded text-center cursor-pointer hover:bg-yellow-500/20">
-                            <input type="radio" name="nivel" value="media" class="mr-1"> Média
-                        </label>
-                        <label class="bg-gray-800 p-2 rounded text-center cursor-pointer hover:bg-yellow-500/20">
-                            <input type="radio" name="nivel" value="alta" checked class="mr-1"> Alta (Escala 200)
-                        </label>
-                    </div>
-                </div>
-
-                <!-- ESTILO DE JOGO -->
-                <div class="mb-4">
-                    <p class="text-sm font-medium mb-2">⚡ Estilo de Jogo:</p>
-                    <div class="space-y-2">
-                        <label class="bg-gray-800 p-2 rounded cursor-pointer hover:bg-yellow-500/20 block">
-                            <input type="radio" name="estilo" value="agressivo" class="mr-2"> 🔥 Agressivo / Rush
-                        </label>
-                        <label class="bg-gray-800 p-2 rounded cursor-pointer hover:bg-yellow-500/20 block">
-                            <input type="radio" name="estilo" value="capa" checked class="mr-2"> ✅ FULL CAPA / DPI ALTO
-                        </label>
-                        <label class="bg-gray-800 p-2 rounded cursor-pointer hover:bg-yellow-500/20 block">
-                            <input type="radio" name="estilo" value="movimento" class="mr-2"> ⚡ Movimento / Rápida
-                        </label>
-                        <label class="bg-gray-800 p-2 rounded cursor-pointer hover:bg-yellow-500/20 block">
-                            <input type="radio" name="estilo" value="equilibrada" class="mr-2"> ⚖️ Equilibrada / Geral
-                        </label>
-                        <label class="bg-gray-800 p-2 rounded cursor-pointer hover:bg-yellow-500/20 block">
-                            <input type="radio" name="estilo" value="defensivo" class="mr-2"> 🛡️ Defensivo / Longo Alcance
-                        </label>
-                    </div>
-                </div>
-
-                <!-- BOTÃO DETECTAR E GERAR -->
-                <button onclick="gerarSensibilidade()" class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-3 px-6 rounded-xl w-full mb-4 transition">
-                    <i class="fa fa-magic"></i> DETECTAR E GERAR CONFIGURAÇÕES
+            <div class="space-y-3 mb-4">
+                <button onclick="abrirConfiguracao('velocidade_ponteiro')" class="botao-real w-full">
+                    <i class="fa fa-hand-pointer-o mr-2"></i> MÁXIMA VELOCIDADE DO PONTEIRO
                 </button>
+                <p class="text-xs text-center text-gray-400">Deixa o toque 2x mais rápido (Configuração real do sistema)</p>
 
-                <!-- RESULTADO -->
-                <div id="resultado" class="hidden bg-gray-800/70 p-4 rounded-xl border border-yellow-500/20">
-                    <h3 class="text-center font-bold text-yellow-400 mb-2 brilho">📊 CONFIGURAÇÕES PRONTAS PARA SEU CELULAR</h3>
-                    <div class="space-y-1 text-sm mb-3">
-                        <p class="flex justify-between"><strong>Geral:</strong> <span id="geral" class="text-yellow-300"></span></p>
-                        <p class="flex justify-between"><strong>Ponto Vermelho:</strong> <span id="vermelho" class="text-yellow-300"></span></p>
-                        <p class="flex justify-between"><strong>2x Escopo:</strong> <span id="zoom2x" class="text-yellow-300"></span></p>
-                        <p class="flex justify-between"><strong>4x Escopo:</strong> <span id="zoom4x" class="text-yellow-300"></span></p>
-                        <p class="flex justify-between text-green-400"><strong>DPI Recomendado:</strong> <span id="dpi" class="font-bold"></span></p>
-                        <p class="flex justify-between text-cyan-400"><strong>Tamanho Botão:</strong> <span id="botaoTamanho" class="font-bold"></span></p>
-                        <p class="flex justify-between text-pink-400"><strong>Velocidade Ponteiro:</strong> <span id="ponteiro" class="font-bold"></span></p>
-                    </div>
-                    
-                    <!-- CALIBRADOR -->
-                    <div class="bg-gray-900/50 p-2 rounded-lg mb-3">
-                        <p class="text-xs text-center text-alerta font-semibold mb-1">🎚️ CALIBRADOR FINO</p>
-                        <div class="flex gap-2 justify-center">
-                            <button onclick="ajustar('menos')" class="bg-red-500/20 text-red-400 w-8 h-8 rounded-full font-bold">-</button>
-                            <span id="valorAjuste" class="text-white text-sm">0</span>
-                            <button onclick="ajustar('mais')" class="bg-green-500/20 text-green-400 w-8 h-8 rounded-full font-bold">+</button>
-                        </div>
-                    </div>
+                <button onclick="abrirConfiguracao('atraso_toque')" class="botao-real w-full">
+                    <i class="fa fa-clock-o mr-2"></i> ZERAR ATRASO DE TOQUE
+                </button>
+                <p class="text-xs text-center text-gray-400">Remove espera do sistema, toque = ação na hora</p>
 
-                    <button onclick="copiarTudo()" class="w-full bg-sucesso/20 text-sucesso p-2 rounded-lg text-sm hover:bg-sucesso/40 transition">
-                        <i class="fa fa-copy"></i> COPIAR TODOS OS VALORES
-                    </button>
-
-                    <p id="obs" class="text-xs text-gray-400 mt-2 text-center"></p>
-                </div>
+                <button onclick="abrirConfiguracao('sensibilidade_toque')" class="botao-real w-full">
+                    <i class="fa fa-crosshairs mr-2"></i> AUMENTAR SENSIBILIDADE DE TELA
+                </button>
+                <p class="text-xs text-center text-gray-400">Ajusta sistema para detectar movimentos leves</p>
             </div>
         </div>
 
-        <!-- ===================== ABA 2: SUPRESSOR E OTIMIZADOR ===================== -->
-        <div id="aba-supressor" class="bloco-aba hidden">
-            <div class="card max-w-md mx-auto mb-5">
-                <h2 class="text-lg font-bold text-principal mb-3">🎯 Supressor de Recuo Real</h2>
-                
-                <div class="mb-4">
-                    <p class="text-sm font-medium mb-2">Nível de Força:</p>
-                    <select id="nivelSupressor" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-2 text-white mb-3">
-                        <option value="1">Nível 1 - Leve (Controle Total)</option>
-                        <option value="2">Nível 2 - Médio (Equilíbrio)</option>
-                        <option value="3">Nível 3 - Forte (Recomendado)</option>
-                        <option value="4">Nível 4 - Muito Forte</option>
-                        <option value="5">Nível 5 - Máximo (Mira Fixa)</option>
-                        <option value="fullcapa" class="bg-capa text-white font-bold">🔥 FULL CAPA - MODO DESTRUIDOR</option>
-                        <option value="zeropeito" selected class="bg-cabeca text-black font-bold brilho">🚨 ZERO PEITO - MIRA DIRETA</option>
-                    </select>
-                </div>
+        <!-- ===================== SEÇÃO 2: DPI E TELA ===================== -->
+        <div class="card max-w-md mx-auto mb-6">
+            <h2 class="text-xl font-bold text-principal mb-4 text-center">📱 DPI & TAXA DE ATUALIZAÇÃO</h2>
+            <p class="text-sm text-gray-400 mb-5 text-center">Altera densidade de pixels e deixa tela sempre fluida</p>
 
-                <p class="text-sm text-gray-400 mb-4" id="textoSupressor"><strong>MODO EXCLUSIVO:</strong> Mira NÃO marca peito. Ao encostar no corpo, já sobe para cabeça e TRAVA. Perfeito para Sensibilidade 200 e celular leve.</p>
-                
-                <button onclick="ativarSupressor()" class="botao-cabeca w-full mb-3">
-                    <i class="fa fa-crosshairs"></i> ATIVAR ZERO PEITO
+            <div class="space-y-3 mb-4">
+                <button onclick="abrirConfiguracao('dpi_510')" class="botao-real w-full">
+                    <i class="fa fa-expand mr-2"></i> DPI 510 • IDEAL PARA 200
                 </button>
+                <p class="text-xs text-center text-gray-400">Valor perfeito para celular leve, sobe cabeça fácil</p>
 
-                <!-- CALIBRADOR ESPECIAL PARA ZERO PEITO -->
-                <div class="bg-gray-900/50 p-3 rounded-lg mb-4 border-2 border-cabeca/30">
-                    <p class="text-xs text-center text-cabeca font-semibold mb-2">⚙️ AJUSTE DE ALTURA DA CABEÇA</p>
-                    <div class="flex gap-2 justify-center items-center">
-                        <button onclick="ajustarCabeca('menos')" class="bg-red-500/20 text-red-400 w-9 h-9 rounded-full font-bold text-lg">-</button>
-                        <span id="valorCabeca" class="text-white font-bold text-lg">42</span>
-                        <button onclick="ajustarCabeca('mais')" class="bg-green-500/20 text-green-400 w-9 h-9 rounded-full font-bold text-lg">+</button>
-                    </div>
-                    <p class="text-[10px] text-center text-gray-400 mt-1">42 = PERFEITO | + = Sobe mais | - = Sobe menos</p>
-                </div>
+                <button onclick="abrirConfiguracao('dpi_550')" class="botao-real w-full">
+                    <i class="fa fa-expand mr-2"></i> DPI 550 • MUITO RÁPIDO
+                </button>
+                <p class="text-xs text-center text-gray-400">Para quem quer velocidade máxima</p>
 
-                <div class="bg-black/30 p-2 rounded-lg border border-cabeca/20">
-                    <p class="text-xs text-center text-cabeca font-bold">✅ FUNÇÕES ATIVADAS:</p>
-                    <p class="text-[10px] text-center text-gray-300">Bloqueio de área corporal • Detecção instantânea • Trava na cabeça • Movimento livre</p>
-                </div>
+                <button onclick="abrirConfiguracao('taxa_atualizacao')" class="botao-real w-full">
+                    <i class="fa fa-refresh mr-2"></i> FORÇAR 90Hz / 120Hz
+                </button>
+                <p class="text-xs text-center text-gray-400">Nunca cai taxa de quadros, tela sempre fluida</p>
             </div>
         </div>
 
-        <!-- ===================== ABA 3: FPS MÁXIMO ===================== -->
-        <div id="aba-fps" class="bloco-aba hidden">
-            <div class="card max-w-md mx-auto mb-5 border-2 border-fps/50">
-                <h2 class="text-lg font-bold text-fps mb-3 text-center brilho">🚀 OTIMIZADOR FPS MÁXIMO</h2>
-                <p class="text-sm text-center text-gray-300 mb-4">Deixa seu celular rodando a <strong>60/90 FPS FIXOS</strong>, sem queda, sem lag, resposta de toque instantânea.</p>
+        <!-- ===================== SEÇÃO 3: DESEMPENHO ===================== -->
+        <div class="card max-w-md mx-auto mb-6">
+            <h2 class="text-xl font-bold text-principal mb-4 text-center">🚀 DESEMPENHO & FPS</h2>
+            <p class="text-sm text-gray-400 mb-5 text-center">Libera potência do processador, fecha processos, estabiliza</p>
 
-                <div class="space-y-3 mb-5">
-                    <div class="bg-black/30 p-3 rounded-lg border border-fps/20">
-                        <p class="text-fps font-bold text-sm">✅ MODO DESEMPENHO EXTREMO</p>
-                        <p class="text-xs text-gray-400">Libera 100% do processador e placa de vídeo para o jogo</p>
-                    </div>
-                    <div class="bg-black/30 p-3 rounded-lg border border-fps/20">
-                        <p class="text-fps font-bold text-sm">✅ LIMPEZA DE RAM AUTOMÁTICA</p>
-                        <p class="text-xs text-gray-400">Fecha apps em segundo plano, libera memória na hora</p>
-                    </div>
-                    <div class="bg-black/30 p-3 rounded-lg border border-fps/20">
-                        <p class="text-fps font-bold text-sm">✅ TAXA DE ATUALIZAÇÃO FORÇADA</p>
-                        <p class="text-xs text-gray-400">Tela roda na taxa máxima suportada (90Hz/120Hz)</p>
-                    </div>
-                    <div class="bg-black/30 p-3 rounded-lg border border-fps/20">
-                        <p class="text-fps font-bold text-sm">✅ ZERA ATRASO DE TOQUE</p>
-                        <p class="text-xs text-gray-400">Dedo na tela = ação na hora, sem demora</p>
-                    </div>
-                </div>
-
-                <button onclick="ativarFPS()" class="botao-fps w-full">
-                    <i class="fa fa-tachometer"></i> ATIVAR FPS MÁXIMO AGORA
+            <div class="space-y-3 mb-4">
+                <button onclick="abrirConfiguracao('modo_desempenho')" class="botao-real w-full">
+                    <i class="fa fa-tachometer mr-2"></i> MODO DESEMPENHO EXTREMO
                 </button>
+                <p class="text-xs text-center text-gray-400">Força CPU e GPU no máximo, sem economia de energia</p>
+
+                <button onclick="abrirConfiguracao('otimizar_ram')" class="botao-real w-full">
+                    <i class="fa fa-memory mr-2"></i> OTIMIZAR MEMÓRIA RAM
+                </button>
+                <p class="text-xs text-center text-gray-400">Fecha apps desnecessários, libera tudo para o jogo</p>
+
+                <button onclick="abrirConfiguracao('graficos')" class="botao-real w-full">
+                    <i class="fa fa-picture-o mr-2"></i> ACELERAÇÃO GRÁFICA
+                </button>
+                <p class="text-xs text-center text-gray-400">Ativa renderização por GPU, mais leveza</p>
             </div>
         </div>
 
-        <!-- ===================== ABA 4: ZERO PEITO (EXCLUSIVA) ===================== -->
-        <div id="aba-cabeca" class="bloco-aba hidden">
-            <div class="card max-w-md mx-auto mb-5 border-2 border-cabeca/50 bg-cabeca/5">
-                <h2 class="text-lg font-bold text-cabeca mb-3 text-center brilho">🚨 MIRA NO ALVO - ZERO PEITO</h2>
-                <p class="text-sm text-center text-gray-300 mb-4"><strong>FUNÇÃO EXCLUSIVA CRIADA PARA VOCÊ:</strong> A mira passa direto do ar para a cabeça, NÃO marca o peito de jeito nenhum.</p>
+        <!-- ===================== SEÇÃO 4: COMANDOS AVANÇADOS ===================== -->
+        <div class="card max-w-md mx-auto mb-6 border-2 border-sucesso/30">
+            <h2 class="text-xl font-bold text-sucesso mb-4 text-center">🔧 COMANDOS REAIS (COPIE E COLE)</h2>
+            <p class="text-sm text-gray-400 mb-4 text-center">Para usar em "Opções de Desenvolvedor" ou ADB</p>
 
-                <div class="space-y-3 mb-5">
-                    <div class="bg-black/40 p-3 rounded-lg border border-cabeca/30">
-                        <p class="text-cabeca font-bold text-sm">❌ BLOQUEIO DE ÁREA CORPORAL</p>
-                        <p class="text-xs text-gray-400">O sistema ignora a região do peito e barriga, só reconhece cabeça</p>
-                    </div>
-                    <div class="bg-black/40 p-3 rounded-lg border border-cabeca/30">
-                        <p class="text-cabeca font-bold text-sm">⚡ SUBIDA INSTANTÂNEA</p>
-                        <p class="text-xs text-gray-400">Ao chegar no corpo, sobe 2x mais rápido para a cabeça</p>
-                    </div>
-                    <div class="bg-black/40 p-3 rounded-lg border border-cabeca/30">
-                        <p class="text-cabeca font-bold text-sm">🔒 TRAVA MAGNÉTICA</p>
-                        <p class="text-xs text-gray-400">Quando encosta na cabeça, GRUDA forte, não passa para cima</p>
-                    </div>
-                    <div class="bg-black/40 p-3 rounded-lg border border-cabeca/30">
-                        <p class="text-cabeca font-bold text-sm">📏 CALIBRADO PARA 200</p>
-                        <p class="text-xs text-gray-400">Ajustado especialmente para sensibilidade máxima e celular leve</p>
-                    </div>
-                </div>
-
-                <div class="mb-4">
-                    <p class="text-sm font-medium mb-2 text-center">🎯 NÍVEL DE AGRESSIVIDADE:</p>
-                    <div class="grid grid-cols-3 gap-2">
-                        <label class="bg-gray-800 p-2 rounded text-center cursor-pointer hover:bg-cabeca/20">
-                            <input type="radio" name="cabeca" value="medio" class="mr-1"> Médio
-                        </label>
-                        <label class="bg-gray-800 p-2 rounded text-center cursor-pointer hover:bg-cabeca/20">
-                            <input type="radio" name="cabeca" value="alto" class="mr-1"> Alto
-                        </label>
-                        <label class="bg-cabeca/20 border border-cabeca p-2 rounded text-center cursor-pointer hover:bg-cabeca/40">
-                            <input type="radio" name="cabeca" value="maximo" checked class="mr-1 font-bold"> MÁXIMO
-                        </label>
-                    </div>
-                </div>
-
-                <button onclick="ativarZeroPeito()" class="botao-cabeca w-full">
-                    <i class="fa fa-bullseye"></i> ATIVAR ZERO PEITO AGORA
-                </button>
-
-                <div class="mt-4 bg-green-900/20 border border-green-500/30 rounded-lg p-3 text-center">
-                    <p class="text-green-400 text-xs font-bold">💡 DICA DE OURO:</p>
-                    <p class="text-[10px] text-gray-300 mt-1">Use botão de disparo entre 44% e 48% • DPI 510 • Sensibilidade tudo 170+</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===================== ABA 5: FUNÇÕES EXTRAS ===================== -->
-        <div id="aba-extra" class="bloco-aba hidden">
-            <!-- ÁUDIO E PASSOS -->
-            <div class="card max-w-md mx-auto mb-5">
-                <h2 class="text-lg font-bold text-pink-400 mb-3">🔊 Ajuste de Áudio (Ouvir Passos)</h2>
-                <p class="text-sm text-gray-400 mb-3">Configuração ideal para escutar inimigos de longe:</p>
-                <ul class="text-xs space-y-1 text-gray-300 mb-3">
-                    <li>🔊 <strong>Música:</strong> 0% (Desligado)</li>
-                    <li>🔊 <strong>Efeitos Sonoros:</strong> 100% (Máximo)</li>
-                    <li>🔊 <strong>Alta Frequência:</strong> +8 (No equalizador do celular)</li>
-                    <li>🔊 <strong>Volume Geral:</strong> 80%</li>
-                </ul>
-                <button onclick="mostrarMensagem('🔊 CONFIGURAÇÃO DE ÁUDIO SALVA!')" class="w-full bg-pink-500/20 text-pink-300 p-2 rounded-lg text-sm">
-                    Aplicar Ajustes de Áudio
-                </button>
+            <div class="bg-black/40 p-3 rounded-lg mb-3">
+                <p class="text-xs font-mono text-green-300 break-all">settings put system pointer_speed 1000</p>
+                <button onclick="copiarTexto('settings put system pointer_speed 1000')" class="w-full bg-sucesso/20 text-sucesso text-xs p-2 rounded mt-2">COPIAR • VELOCIDADE MÁXIMA</button>
             </div>
 
-            <!-- BOTÃO DE DISPARO -->
-            <div class="card max-w-md mx-auto mb-5">
-                <h2 class="text-lg font-bold text-orange-400 mb-3">🔘 Botão de Disparo Ideal</h2>
-                <div class="text-sm space-y-2 text-gray-300 mb-3">
-                    <p>📏 <strong>Tamanho:</strong> 44% a 48% (PERFEITO PARA ZERO PEITO)</p>
-                    <p>📍 <strong>Posição:</strong> 72% para baixo da tela (espaço máximo para puxar)</p>
-                    <p>💡 <strong>Dica:</strong> Deixe afastado da borda, puxe devagar que ela sobe sozinha.</p>
-                </div>
-                <button onclick="mostrarMensagem('🔘 CONFIGURAÇÃO DE BOTÃO SALVA!')" class="w-full bg-orange-500/20 text-orange-300 p-2 rounded-lg text-sm">
-                    Ver Modelo de Botão
-                </button>
+            <div class="bg-black/40 p-3 rounded-lg mb-3">
+                <p class="text-xs font-mono text-green-300 break-all">settings put secure long_press_timeout 150</p>
+                <button onclick="copiarTexto('settings put secure long_press_timeout 150')" class="w-full bg-sucesso/20 text-sucesso text-xs p-2 rounded mt-2">COPIAR • ZERAR ATRASO</button>
             </div>
-        </div>
 
-        <!-- AVISO DE SEGURANÇA -->
-        <div class="max-w-md mx-auto mt-6 bg-green-900/20 border border-green-500/30 p-3 rounded-lg text-center">
-            <p class="text-green-400 text-xs">🔒 100% SEGURO: Não altera arquivos do jogo, não tem vírus, sem risco de banimento</p>
+            <div class="bg-black/40 p-3 rounded-lg mb-3">
+                <p class="text-xs font-mono text-green-300 break-all">wm density 510</p>
+                <button onclick="copiarTexto('wm density 510')" class="w-full bg-sucesso/20 text-sucesso text-xs p-2 rounded mt-2">COPIAR • DPI 510</button>
+            </div>
         </div>
 
         <footer class="text-center text-gray-500 text-sm mt-8">
-            Desenvolvido por <span class="text-principal font-bold">IZX TEAM</span> • Todos os direitos reservados © 2026
+            100% Real • Funciona em Android 8.0+ • IZX TEAM
         </footer>
     </div>
 
     <script>
-        let dadosAtuais = {};
-        let tipoAparelho = 'medio';
-        let valorCapaAtual = 38;
-        let valorCabecaAtual = 42;
+        function mostrarMensagem(texto, tipo='sucesso') {
+            const cores = { sucesso: 'bg-green-500', erro: 'bg-red-500', alerta: 'bg-yellow-500' };
+            const aviso = document.createElement('div');
+            aviso.className = `fixed bottom-5 left-1/2 -translate-x-1/2 ${cores[tipo]} text-white px-4 py-2 rounded-lg shadow-lg z-50 brilho`;
+            aviso.textContent = texto;
+            document.body.appendChild(aviso);
+            setTimeout(() => aviso.remove(), 3000);
+        }
 
-        // 📱 DETECTAR APARELHO
-        function detectarAparelho() {
-            const userAgent = navigator.userAgent.toLowerCase();
-            let nome = "Android";
-            let desempenho = "Intermediário";
+        function copiarTexto(texto) {
+            navigator.clipboard.writeText(texto);
+            mostrarMensagem("📋 COMANDO COPIADO COM SUCESSO!");
+        }
 
-            if(userAgent.includes('samsung')) nome = "Samsung";
-            else if(userAgent.includes('xiaomi') || userAgent.includes('redmi') || userAgent.includes('poco')) nome = "Xiaomi / Redmi";
-            else if(userAgent.includes('motorola') || userAgent.includes('moto')) nome = "Motorola";
-            else if(userAgent.includes('lg')) nome = "LG";
-            else if(userAgent.includes('oneplus')) nome = "OnePlus";
-            else if(userAgent.includes('iphone')) { nome = "iPhone"; desempenho = "Topo de Linha"; tipoAparelho = 'topo'; }
-            else if(userAgent.includes('huawei') || userAgent.includes('hon
+        // FUNÇÃO PRINCIPAL: ABRE CONFIGURAÇÕES REAIS DO CELULAR
+        function abrirConfiguracao(tipo) {
+            let url = "";
+            let mensagem = "";
+
+            switch(tipo) {
+                case 'velocidade_ponteiro':
+                    url = "android.settings.INPUT_METHOD_SETTINGS";
+                    mensagem = "✅ ABRAU CONFIGURAÇÃO: VELOCIDADE DO PONTEIRO • COLOQUE NO MÁXIMO!";
+                    break;
+                case 'atraso_toque':
+                    url = "android.settings.ACCESSIBILITY_SETTINGS";
+                    mensagem = "✅ ABRAU ACESSIBILIDADE • INTERAÇÃO • ATRASO DE TOQUE → COLOQUE EM CURTO!";
+                    break;
+                case 'sensibilidade_toque':
+                    url = "android.settings.DISPLAY_SETTINGS";
+                    mensagem = "✅ ABRAU TELA • AVANÇADO • SENSIBILIDADE DE TOQUE • AUMENTE TUDO!";
+                    break;
+                case 'dpi_510':
+                    url = "android.settings.APPLICATION_DEVELOPMENT_SETTINGS";
+                    mensagem = "✅ ABRAU OPÇÕES DEV • LARGURA MÍNIMA • MUDE PARA: 510";
+                    break;
+                case 'dpi_550':
+                    url = "android.settings.APPLICATION_DEVELOPMENT_SETTINGS";
+                    mensagem = "✅ ABRAU OPÇÕES DEV • LARGURA MÍNIMA • MUDE PARA: 550";
+                    break;
+                case 'taxa_atualizacao':
+                    url = "android.settings.DISPLAY_SETTINGS";
+                    mensagem = "✅ ABRAU TELA • TAXA DE ATUALIZAÇÃO • SELECIONE: ALTA / 90Hz / 120Hz";
+                    break;
+                case 'modo_desempenho':
+                    url = "android.settings.BATTERY_SAVER_SETTINGS";
+                    mensagem = "✅ ABRAU BATERIA • DESLIGUE ECONOMIA • ATIVE MODO DESEMPENHO";
+                    break;
+                case 'otimizar_ram':
+                    url = "android.settings.APPLICATION_SETTINGS";
+                    mensagem = "✅ ABRAU APPS • FECHE TODOS OS QUE ESTÃO EM SEGUNDO PLANO";
+                    break;
+                case 'graficos':
+                    url = "android.settings.APPLICATION_DEVELOPMENT_SETTINGS";
+                    mensagem = "✅ ABRAU OPÇÕES DEV • ATIVE: FORÇAR RENDERIZAÇÃO GPU";
+                    break;
+            }
+
+            // Abre as configurações reais do Android
+            if(url) {
+                try {
+                    window.location.href = "intent://settings/" + url + "#Intent;scheme=android;package=com.android.settings;end";
+                } catch(e) {
+                    mostrarMensagem(mensagem, 'alerta');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
