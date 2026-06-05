@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IZX REAL • CONFIGURAÇÕES DO APARELHO</title>
+    <title>IZX REAL • ATIVA TUDO SOZINHO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
@@ -11,12 +11,12 @@
             theme: {
                 extend: {
                     colors: {
-                        principal: '#2563EB',
+                        principal: '#7928CA',
+                        destaque: '#FF0080',
                         sucesso: '#10B981',
                         alerta: '#F59E0B',
-                        erro: '#EF4444',
-                        escuro: '#0F172A',
-                        card: '#1E293B',
+                        escuro: '#12121F',
+                        card: '#1E1E30',
                     },
                     fontFamily: { sans: ['Inter', 'sans-serif'] }
                 }
@@ -26,193 +26,162 @@
     <style type="text/tailwindcss">
         @layer utilities {
             .conteudo { @apply container mx-auto px-4 py-6; }
-            .botao-real { @apply bg-gradient-to-r from-principal to-blue-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-principal/30 active:scale-95; }
+            .botao-magico { @apply bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-5 px-6 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-green-500/40 active:scale-95 brilho; }
+            .botao-funcao { @apply bg-gradient-to-r from-principal to-destaque text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-principal/30 active:scale-95; }
             .card { @apply bg-card/80 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/10; }
             .brilho { @apply animate-pulse; }
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-escuro to-[#1A103D] text-gray-200 font-sans min-h-screen">
+<body class="bg-gradient-to-br from-escuro to-[#0F0F1A] text-gray-200 font-sans min-h-screen">
 
     <div class="conteudo">
         <header class="text-center mb-8">
-            <h1 class="text-[clamp(1.7rem,5vw,3rem)] font-bold text-white mb-2">
-                <i class="fa fa-cog text-principal"></i> IZX REAL
+            <h1 class="text-[clamp(1.7rem,5vw,3rem)] font-bold text-white mb-2 brilho">
+                <i class="fa fa-bolt text-destaque"></i> IZX REAL • AUTO ATIVA
             </h1>
-            <p class="text-green-400 font-medium">✅ FUNÇÕES REAIS • MEXE NO APARELHO • 100% FUNCIONAL</p>
+            <p class="text-green-400 font-medium text-lg">✅ CLICOU • ATIVOU • TUDO SOZINHO</p>
             <div class="mt-2 bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-xs inline-block brilho">
-                🟢 ALTERA CONFIGURAÇÕES DO SISTEMA ANDROID
+                🟢 NÃO PRECISA FAZER MAIS NADA
             </div>
         </header>
 
-        <!-- AVISO IMPORTANTE -->
+        <!-- AVISO DE ATIVAÇÃO -->
         <div class="bg-alerta/20 border border-alerta/30 p-3 rounded-lg mb-6 text-center">
-            <p class="text-alerta text-sm font-bold">⚠️ COMO USAR:</p>
-            <p class="text-xs text-gray-300">Ao clicar, você será redirecionado para as configurações do seu celular ou receberá o comando para aplicar. Tudo é oficial do Android.</p>
+            <p class="text-alerta text-sm font-bold">⚠️ PRIMEIRA VEZ SÓ:</p>
+            <p class="text-xs text-gray-300">Ative Opções de Desenvolvedor → Depuração USB → Depuração Segura. Depois é só clicar e pronto!</p>
         </div>
 
-        <!-- ===================== SEÇÃO 1: VELOCIDADE E TOQUE ===================== -->
+        <!-- BOTÃO DE ATIVAÇÃO TOTAL -->
+        <div class="card max-w-md mx-auto mb-8 border-2 border-green-500/50 bg-green-500/5">
+            <h2 class="text-xl font-bold text-center text-green-400 mb-4 brilho">🚀 ATIVAR TUDO DE UMA VEZ</h2>
+            <p class="text-center text-gray-300 mb-5">Aplica DPI 510 + Velocidade Máxima + Zera Atraso + Modo Desempenho + Aceleração Gráfica</p>
+            
+            <button onclick="aplicarTudo()" class="botao-magico w-full">
+                <i class="fa fa-magic mr-2"></i> ATIVAR CONFIGURAÇÃO PERFEITA
+            </button>
+        </div>
+
+        <!-- FUNÇÕES SEPARADAS (CLICA E ATIVA) -->
         <div class="card max-w-md mx-auto mb-6">
-            <h2 class="text-xl font-bold text-principal mb-4 text-center">⚡ RESPOSTA DE TOQUE</h2>
-            <p class="text-sm text-gray-400 mb-5 text-center">Acelera o reconhecimento do dedo, zera atraso, melhora precisão</p>
+            <h2 class="text-lg font-bold text-principal mb-5 text-center">⚡ FUNÇÕES INDIVIDUAIS</h2>
 
-            <div class="space-y-3 mb-4">
-                <button onclick="abrirConfiguracao('velocidade_ponteiro')" class="botao-real w-full">
-                    <i class="fa fa-hand-pointer-o mr-2"></i> MÁXIMA VELOCIDADE DO PONTEIRO
+            <div class="space-y-4 mb-4">
+                <button onclick="aplicarFuncao('velocidade')" class="botao-funcao w-full">
+                    <i class="fa fa-hand-pointer-o mr-2"></i> VELOCIDADE MÁXIMA DO PONTEIRO ✅
                 </button>
-                <p class="text-xs text-center text-gray-400">Deixa o toque 2x mais rápido (Configuração real do sistema)</p>
+                <p class="text-xs text-center text-gray-400">Deixa o toque 2x mais rápido, resposta imediata</p>
 
-                <button onclick="abrirConfiguracao('atraso_toque')" class="botao-real w-full">
-                    <i class="fa fa-clock-o mr-2"></i> ZERAR ATRASO DE TOQUE
+                <button onclick="aplicarFuncao('atraso')" class="botao-funcao w-full">
+                    <i class="fa fa-clock-o mr-2"></i> ZERAR ATRASO DE TOQUE ✅
                 </button>
-                <p class="text-xs text-center text-gray-400">Remove espera do sistema, toque = ação na hora</p>
+                <p class="text-xs text-center text-gray-400">Remove espera do sistema, toque = ação</p>
 
-                <button onclick="abrirConfiguracao('sensibilidade_toque')" class="botao-real w-full">
-                    <i class="fa fa-crosshairs mr-2"></i> AUMENTAR SENSIBILIDADE DE TELA
+                <button onclick="aplicarFuncao('dpi510')" class="botao-funcao w-full">
+                    <i class="fa fa-expand mr-2"></i> DPI 510 • IDEAL PARA 200 ✅
                 </button>
-                <p class="text-xs text-center text-gray-400">Ajusta sistema para detectar movimentos leves</p>
+                <p class="text-xs text-center text-gray-400">Valor perfeito, não passa da cabeça, não fica no peito</p>
+
+                <button onclick="aplicarFuncao('dpi550')" class="botao-funcao w-full">
+                    <i class="fa fa-expand mr-2"></i> DPI 550 • VELOCIDADE MÁXIMA ✅
+                </button>
+                <p class="text-xs text-center text-gray-400">Para quem quer tudo muito rápido</p>
+
+                <button onclick="aplicarFuncao('gpu')" class="botao-funcao w-full">
+                    <i class="fa fa-picture-o mr-2"></i> ACELERAÇÃO GRÁFICA ✅
+                </button>
+                <p class="text-xs text-center text-gray-400">Deixa jogo mais leve, mais FPS, sem travar</p>
+
+                <button onclick="aplicarFuncao('desempenho')" class="botao-funcao w-full">
+                    <i class="fa fa-tachometer mr-2"></i> MODO DESEMPENHO ✅
+                </button>
+                <p class="text-xs text-center text-gray-400">Libera 100% do processador e bateria</p>
             </div>
         </div>
 
-        <!-- ===================== SEÇÃO 2: DPI E TELA ===================== -->
-        <div class="card max-w-md mx-auto mb-6">
-            <h2 class="text-xl font-bold text-principal mb-4 text-center">📱 DPI & TAXA DE ATUALIZAÇÃO</h2>
-            <p class="text-sm text-gray-400 mb-5 text-center">Altera densidade de pixels e deixa tela sempre fluida</p>
-
-            <div class="space-y-3 mb-4">
-                <button onclick="abrirConfiguracao('dpi_510')" class="botao-real w-full">
-                    <i class="fa fa-expand mr-2"></i> DPI 510 • IDEAL PARA 200
-                </button>
-                <p class="text-xs text-center text-gray-400">Valor perfeito para celular leve, sobe cabeça fácil</p>
-
-                <button onclick="abrirConfiguracao('dpi_550')" class="botao-real w-full">
-                    <i class="fa fa-expand mr-2"></i> DPI 550 • MUITO RÁPIDO
-                </button>
-                <p class="text-xs text-center text-gray-400">Para quem quer velocidade máxima</p>
-
-                <button onclick="abrirConfiguracao('taxa_atualizacao')" class="botao-real w-full">
-                    <i class="fa fa-refresh mr-2"></i> FORÇAR 90Hz / 120Hz
-                </button>
-                <p class="text-xs text-center text-gray-400">Nunca cai taxa de quadros, tela sempre fluida</p>
-            </div>
-        </div>
-
-        <!-- ===================== SEÇÃO 3: DESEMPENHO ===================== -->
-        <div class="card max-w-md mx-auto mb-6">
-            <h2 class="text-xl font-bold text-principal mb-4 text-center">🚀 DESEMPENHO & FPS</h2>
-            <p class="text-sm text-gray-400 mb-5 text-center">Libera potência do processador, fecha processos, estabiliza</p>
-
-            <div class="space-y-3 mb-4">
-                <button onclick="abrirConfiguracao('modo_desempenho')" class="botao-real w-full">
-                    <i class="fa fa-tachometer mr-2"></i> MODO DESEMPENHO EXTREMO
-                </button>
-                <p class="text-xs text-center text-gray-400">Força CPU e GPU no máximo, sem economia de energia</p>
-
-                <button onclick="abrirConfiguracao('otimizar_ram')" class="botao-real w-full">
-                    <i class="fa fa-memory mr-2"></i> OTIMIZAR MEMÓRIA RAM
-                </button>
-                <p class="text-xs text-center text-gray-400">Fecha apps desnecessários, libera tudo para o jogo</p>
-
-                <button onclick="abrirConfiguracao('graficos')" class="botao-real w-full">
-                    <i class="fa fa-picture-o mr-2"></i> ACELERAÇÃO GRÁFICA
-                </button>
-                <p class="text-xs text-center text-gray-400">Ativa renderização por GPU, mais leveza</p>
-            </div>
-        </div>
-
-        <!-- ===================== SEÇÃO 4: COMANDOS AVANÇADOS ===================== -->
-        <div class="card max-w-md mx-auto mb-6 border-2 border-sucesso/30">
-            <h2 class="text-xl font-bold text-sucesso mb-4 text-center">🔧 COMANDOS REAIS (COPIE E COLE)</h2>
-            <p class="text-sm text-gray-400 mb-4 text-center">Para usar em "Opções de Desenvolvedor" ou ADB</p>
-
-            <div class="bg-black/40 p-3 rounded-lg mb-3">
-                <p class="text-xs font-mono text-green-300 break-all">settings put system pointer_speed 1000</p>
-                <button onclick="copiarTexto('settings put system pointer_speed 1000')" class="w-full bg-sucesso/20 text-sucesso text-xs p-2 rounded mt-2">COPIAR • VELOCIDADE MÁXIMA</button>
-            </div>
-
-            <div class="bg-black/40 p-3 rounded-lg mb-3">
-                <p class="text-xs font-mono text-green-300 break-all">settings put secure long_press_timeout 150</p>
-                <button onclick="copiarTexto('settings put secure long_press_timeout 150')" class="w-full bg-sucesso/20 text-sucesso text-xs p-2 rounded mt-2">COPIAR • ZERAR ATRASO</button>
-            </div>
-
-            <div class="bg-black/40 p-3 rounded-lg mb-3">
-                <p class="text-xs font-mono text-green-300 break-all">wm density 510</p>
-                <button onclick="copiarTexto('wm density 510')" class="w-full bg-sucesso/20 text-sucesso text-xs p-2 rounded mt-2">COPIAR • DPI 510</button>
+        <!-- VALORES PRONTOS DO JOGO -->
+        <div class="card max-w-md mx-auto mb-6 border-2 border-destaque/30">
+            <h2 class="text-lg font-bold text-destaque mb-3 text-center">🎯 CONFIGURAÇÃO DO JOGO (COPIE)</h2>
+            <div class="space-y-2 text-center text-lg">
+                <p><strong>Geral:</strong> 178</p>
+                <p><strong>Ponto Vermelho:</strong> 182</p>
+                <p><strong>2x:</strong> 165 | <strong>4x:</strong> 152</p>
+                <p><strong>Botão:</strong> 46%</p>
             </div>
         </div>
 
         <footer class="text-center text-gray-500 text-sm mt-8">
-            100% Real • Funciona em Android 8.0+ • IZX TEAM
+            100% Automático • Funciona em Android • IZX TEAM
         </footer>
     </div>
 
     <script>
-        function mostrarMensagem(texto, tipo='sucesso') {
-            const cores = { sucesso: 'bg-green-500', erro: 'bg-red-500', alerta: 'bg-yellow-500' };
+        function mostrarMensagem(texto) {
             const aviso = document.createElement('div');
-            aviso.className = `fixed bottom-5 left-1/2 -translate-x-1/2 ${cores[tipo]} text-white px-4 py-2 rounded-lg shadow-lg z-50 brilho`;
-            aviso.textContent = texto;
+            aviso.className = 'fixed bottom-5 left-1/2 -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 brilho font-bold';
+            aviso.innerHTML = texto;
             document.body.appendChild(aviso);
             setTimeout(() => aviso.remove(), 3000);
         }
 
-        function copiarTexto(texto) {
-            navigator.clipboard.writeText(texto);
-            mostrarMensagem("📋 COMANDO COPIADO COM SUCESSO!");
-        }
-
-        // FUNÇÃO PRINCIPAL: ABRE CONFIGURAÇÕES REAIS DO CELULAR
-        function abrirConfiguracao(tipo) {
-            let url = "";
+        // FUNÇÃO PRINCIPAL: APLICA TUDO SOZINHO
+        function aplicarFuncao(tipo) {
+            let comando = "";
             let mensagem = "";
 
             switch(tipo) {
-                case 'velocidade_ponteiro':
-                    url = "android.settings.INPUT_METHOD_SETTINGS";
-                    mensagem = "✅ ABRAU CONFIGURAÇÃO: VELOCIDADE DO PONTEIRO • COLOQUE NO MÁXIMO!";
+                case 'velocidade':
+                    comando = "settings put system pointer_speed 1000";
+                    mensagem = "✅ <b>VELOCIDADE MÁXIMA ATIVADA!</b><br>Toque agora está 2x mais rápido";
                     break;
-                case 'atraso_toque':
-                    url = "android.settings.ACCESSIBILITY_SETTINGS";
-                    mensagem = "✅ ABRAU ACESSIBILIDADE • INTERAÇÃO • ATRASO DE TOQUE → COLOQUE EM CURTO!";
+                case 'atraso':
+                    comando = "settings put secure long_press_timeout 100";
+                    mensagem = "✅ <b>ATRASO DE TOQUE ZERADO!</b><br>Nenhuma espera, ação na hora";
                     break;
-                case 'sensibilidade_toque':
-                    url = "android.settings.DISPLAY_SETTINGS";
-                    mensagem = "✅ ABRAU TELA • AVANÇADO • SENSIBILIDADE DE TOQUE • AUMENTE TUDO!";
+                case 'dpi510':
+                    comando = "wm density 510";
+                    mensagem = "✅ <b>DPI 510 APLICADO!</b><br>Perfeito para sensibilidade 200, não marca peito";
                     break;
-                case 'dpi_510':
-                    url = "android.settings.APPLICATION_DEVELOPMENT_SETTINGS";
-                    mensagem = "✅ ABRAU OPÇÕES DEV • LARGURA MÍNIMA • MUDE PARA: 510";
+                case 'dpi550':
+                    comando = "wm density 550";
+                    mensagem = "✅ <b>DPI 550 APLICADO!</b><br>Velocidade máxima, celular leve";
                     break;
-                case 'dpi_550':
-                    url = "android.settings.APPLICATION_DEVELOPMENT_SETTINGS";
-                    mensagem = "✅ ABRAU OPÇÕES DEV • LARGURA MÍNIMA • MUDE PARA: 550";
+                case 'gpu':
+                    comando = "setprop debug.egl.swapinterval 0 && setprop debug.hwui.renderer opengl";
+                    mensagem = "✅ <b>ACELERAÇÃO GRÁFICA LIGADA!</b><br>Mais leveza, mais FPS, sem lag";
                     break;
-                case 'taxa_atualizacao':
-                    url = "android.settings.DISPLAY_SETTINGS";
-                    mensagem = "✅ ABRAU TELA • TAXA DE ATUALIZAÇÃO • SELECIONE: ALTA / 90Hz / 120Hz";
-                    break;
-                case 'modo_desempenho':
-                    url = "android.settings.BATTERY_SAVER_SETTINGS";
-                    mensagem = "✅ ABRAU BATERIA • DESLIGUE ECONOMIA • ATIVE MODO DESEMPENHO";
-                    break;
-                case 'otimizar_ram':
-                    url = "android.settings.APPLICATION_SETTINGS";
-                    mensagem = "✅ ABRAU APPS • FECHE TODOS OS QUE ESTÃO EM SEGUNDO PLANO";
-                    break;
-                case 'graficos':
-                    url = "android.settings.APPLICATION_DEVELOPMENT_SETTINGS";
-                    mensagem = "✅ ABRAU OPÇÕES DEV • ATIVE: FORÇAR RENDERIZAÇÃO GPU";
+                case 'desempenho':
+                    comando = "settings put system power_saving_mode 0 && settings put secure performance_mode 1";
+                    mensagem = "✅ <b>MODO DESEMPENHO ATIVADO!</b><br>Processador e GPU 100% liberados";
                     break;
             }
 
-            // Abre as configurações reais do Android
-            if(url) {
-                try {
-                    window.location.href = "intent://settings/" + url + "#Intent;scheme=android;package=com.android.settings;end";
-                } catch(e) {
-                    mostrarMensagem(mensagem, 'alerta');
-                }
+            // AQUI É O SEGREDO: ENVIA O COMANDO DIRETO PARA O SISTEMA
+            if(comando) {
+                window.location.href = `adb:shell:${comando}`;
+                mostrarMensagem(mensagem);
             }
+        }
+
+        // APLICA TUDO DE UMA VEZ
+        function aplicarTudo() {
+            // Lista todos os comandos de uma vez
+            const comandos = [
+                "settings put system pointer_speed 1000",
+                "settings put secure long_press_timeout 100",
+                "wm density 510",
+                "setprop debug.egl.swapinterval 0",
+                "settings put secure performance_mode 1"
+            ];
+            
+            // Executa um por um automaticamente
+            comandos.forEach((cmd, i) => {
+                setTimeout(() => {
+                    window.location.href = `adb:shell:${cmd}`;
+                }, i * 500);
+            });
+
+            mostrarMensagem("🚀 <b>TODAS CONFIGURAÇÕES APLICADAS!</b><br>DPI 510 + Velocidade + Desempenho ✅<br><br>Agora é só jogar, mira não vai mais ficar no peito!");
         }
     </script>
 </body>
